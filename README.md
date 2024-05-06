@@ -4,6 +4,7 @@ muti_file_SreachNselect_app
 
 
 Feature:
+
 1.修正非英文輸入法時，無法正常使用複製貼上快捷鍵的問題。
 
 2.增加可使用Shift+下方向鍵，多選檔案。
