@@ -11,12 +11,14 @@ Feature:
 
 3.警告視窗改用自定義按鈕。
 
-4.增加檔案Preview功能
+4.增加檔案Preview功能 
 
-5.批量改名功能，加Prefix 或 Surfix 或 全名修改
+5.批量改名功能，加Prefix 或 Surfix 或 全名修改 (Done)
 
 6.Finder Mode 查閱所有檔案，可點擊進入文件夾
 
-7.Location加[~]為開頭
+7.Location加[~]為開頭 （Done)
+
+8.製成Application，任何Mac使用者都可以打開使用。
 
 
