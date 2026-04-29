@@ -8,7 +8,7 @@
 [![Release](https://img.shields.io/badge/release-v8.1.0-orange.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](#license)
 
-[功能特色](#-功能特色) • [下載安裝](#-下載安裝) • [使用教學](#-使用教學) • [打包說明](#-開發者打包說明) • [更新紀錄](#-更新紀錄-release-notes)
+[功能特色](#-功能特色) • [下載安裝](#-下載安裝) • [使用教學](#-使用教學) • [更新紀錄](#-更新紀錄-release-notes)
 
 </div>
 
