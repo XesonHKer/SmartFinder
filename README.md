@@ -43,9 +43,9 @@
 
 > 主畫面包含目標地址、目標檔案名稱、搜尋按鈕、結果列表（含排序欄位）、操作工具列。
 
-```
-<img width="948" height="691" alt="Screenshot 2026-04-29 at 11 01 32" src="https://github.com/user-attachments/assets/320d30c2-10d0-4211-abc4-01b1d4766660" />
-```
+
+![Preview](./Preview.png)
+
 
 ---
 
