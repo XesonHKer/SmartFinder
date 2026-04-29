@@ -90,14 +90,11 @@
 
 ## 📋 更新紀錄 (Release Notes)
 
-詳見 [RELEASE_NOTES.md](RELEASE_NOTES.md)、[V8.1.0/RELEASE_NOTES.md](V8.1.0/RELEASE_NOTES.md) 或 [Releases 頁面](../../releases)。
-
 最新版本 **v8.1.0** 重點（2026-04-29）：
 - 🌐 新增 **English / 繁體中文** 雙語介面，UI 全面國際化（按鈕、標籤、訊息框、欄位標題）
 - 🎚 主視窗左下角加入 `EN ⇄ 中文` 拉桿（QSlider），可即時切換語言，無需重啟
 - 💾 語言偏好保存於 `Smart_Finder_settings.json`，下次啟動自動沿用
 - 🇬🇧 首次啟動預設語言為 **English**
-- 📦 V8.1.0 原始碼與打包腳本獨立放置於 `V8.1.0/` 目錄，原 V8 內容完整保留以利回溯
 
 **v8** 重點：
 - 全面強化錯誤處理，所有檔案操作均有 try/except 保護，避免閃退
