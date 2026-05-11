@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# 打包 SmartFinder v9.0.1 成 macOS app
+# 打包 SmartFinder v9.0.2 成 macOS app
 
-echo "开始打包 SmartFinder v9.0.1..."
+echo "开始打包 SmartFinder v9.0.2..."
 
 PYTHON_PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin/python3"
 
@@ -23,8 +23,7 @@ if [ -d "dist/SmartFinder.app" ]; then
     echo "打包完成！"
     echo "- 应用文件: $SCRIPT_DIR/dist/SmartFinder.app"
     echo ""
-    echo "注意: 需已安装 Ghostscript 才能使用 PDF 压缩功能"
-    echo "  brew install ghostscript"
+    echo "注意: GS 已內建於 .app 中，無需額外安裝"
 else
     echo "✗ 打包失败，请检查错误信息"
     exit 1
