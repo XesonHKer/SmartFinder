@@ -1,0 +1,6 @@
+# Smart Finder .gitignore
+__pycache__/
+build/
+dist/
+*.pyc
+.DS_Store

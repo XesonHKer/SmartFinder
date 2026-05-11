@@ -1,50 +1,52 @@
 # Smart Finder
 
-**一款專為 macOS 設計的智能檔案搜尋與批量管理工具**
+**A smart file search & batch management tool for macOS**
 
 [![Platform](https://img.shields.io/badge/platform-macOS-blue.svg)](https://www.apple.com/macos/)
 [![Python](https://img.shields.io/badge/python-3.11-yellow.svg)](https://www.python.org/)
 [![PyQt5](https://img.shields.io/badge/GUI-PyQt5-green.svg)](https://pypi.org/project/PyQt5/)
-[![Release](https://img.shields.io/badge/release-v8.1.0-orange.svg)](#)
+[![Release](https://img.shields.io/badge/release-v9.0.2-orange.svg)](https://github.com/XesonHKer/SmartFinder/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](#license)
 
-[功能特色](#-功能特色) • [下載安裝](#-下載安裝) • [使用教學](#-使用教學) • [更新紀錄](#-更新紀錄-release-notes)
+[Features](#-features) • [PDF Compression](#-pdf-compression) • [Download & Install](#-download--install) • [Usage](#-usage) • [FAQ](#-faq) • [Release Notes](#-release-notes)
 
-</div>
-
----
-
-## 📖 簡介
-
-**Smart Finder** 是一款基於 PyQt5 開發的 macOS 桌面應用，旨在解決 Finder 在大量檔案管理時的不足。它讓你能夠在指定資料夾中快速搜尋符合關鍵字的檔案，並提供 **一鍵批量打開、批量改名、批量搬移** 等高效操作，是設計師、影片剪輯師、文檔整理者與一般使用者的好幫手。
-
-> 💡 適用情境：素材整理、檔案歸檔、批量重新命名（加 Prefix / Suffix / 全名重新編號）、跨資料夾檔案管理。
+> **中文版**：[繁體中文說明](#-中文版)
 
 ---
 
-## ✨ 功能特色
+## 📖 Overview
 
-- 🌐 **雙語介面（v8.1.0 新增）**：完整支援 **English / 繁體中文**，所有按鈕、標籤、訊息框、欄位標題皆已國際化。
-- 🎚 **左下角語言切換拉桿（v8.1.0 新增）**：主視窗左下角設有 `EN ⇄ 中文` 拉桿（QSlider），即時切換無需重啟 App。
-- 💾 **語言偏好持久化（v8.1.0 新增）**：語言選擇會保存於 `Smart_Finder_settings.json`，下次啟動自動沿用；首次啟動預設為 **English**。
-- 🔍 **智能模糊搜尋**：輸入關鍵字即可在目標目錄（含所有子目錄）中遞迴搜尋符合的檔案。
-- 🗂 **詳細檔案資訊**：一覽檔名、檔案類型（Word / Excel / PDF / MOV / MP3 / AI / PSD…）、修改日期、檔案大小與相對路徑。
-- 🕘 **最近目錄記憶**：自動保存最近 5 個搜尋過的目錄，方便快速切換。
-- 📂 **批量打開檔案**：一次選擇多個檔案直接以系統預設程式打開（>5 個檔案會貼心提醒）。
-- 📍 **批量打開所在路徑**：自動去重，一次跳轉至所有選取檔案所在的 Finder 視窗。
-- ✏️ **批量改名**：
-  - **加入 Prefix**：在原檔名前加入文字
-  - **加入 Suffix**：在副檔名前加入文字
-  - **全名修改**：以新名稱 + 自動編號（如 `Photo_01.jpg`、`Photo_02.jpg`）統一重新命名
-- 🚚 **批量搬移**：將選取的檔案一次搬移到新的儲存位置，自動偵測並提示重名衝突。
-- 🛡 **健壯的錯誤處理**：對權限不足、檔案被刪除、JSON 損毀等情境皆有保護，不會輕易閃退。
-- 🍎 **原生 macOS 體驗**：附帶 Dock 圖示與自訂 App Icon，已打包成獨立 `.app` 與 `.dmg`。
+**Smart Finder** is a macOS desktop application built with PyQt5 that enhances Finder's file management capabilities. Search for files by keyword across directories, then perform **batch operations** — open, rename, move, or compress PDFs — all from one interface.
+
+> Ideal for designers, video editors, document managers, and anyone dealing with large file collections.
 
 ---
 
-## 🖼 介面預覽
+## ✨ Features
 
-> 主畫面包含目標地址、目標檔案名稱、搜尋按鈕、結果列表（含排序欄位）、操作工具列。
+- 🗜️ **PDF Compression (v9.0.0)** — Quality slider with real-time size estimation. Compress PDFs to 15%~70% of original size.
+- 🚀 **Ghostscript Bundled (v9.0.2)** — No more `brew install ghostscript`! GS is now packed inside the `.app`. Works out of the box.
+- 🌐 **Bilingual UI (v8.1.0)** — Full **English / 繁體中文** support for all buttons, labels, dialogs, and column headers.
+- 🎚 **Language slider (v8.1.0)** — Instant toggle between `EN ⇄ 中文` at the bottom-left corner — no restart needed.
+- 💾 **Language persistence (v8.1.0)** — Your choice is saved in `Smart_Finder_settings.json`; defaults to **English** on first launch.
+- 🔍 **Fuzzy search** — Recursively search target directories for files matching your keyword.
+- 🗂 **Detailed file info** — Name, type (Word / Excel / PDF / MOV / MP3 / AI / PSD…), date modified, size, and relative path.
+- 🕘 **Recent directories** — Automatically remembers the last 5 directories you searched.
+- 📂 **Batch open** — Open multiple files at once with the default system app (warns if >5 files).
+- 📍 **Batch open location** — Jump to Finder folders for all selected files (deduplicated).
+- ✏️ **Batch rename**:
+  - **Add Prefix** — prepend text to filenames
+  - **Add Suffix** — insert text before the extension
+  - **Full Rename** — rename with auto-numbering (e.g. `Photo_01.jpg`, `Photo_02.jpg`)
+- 🚚 **Batch move** — Move selected files to a new location with duplicate detection.
+- 🛡 **Robust error handling** — Graceful handling of missing files, permission errors, and corrupted JSON.
+- 🍎 **Native macOS experience** — Custom Dock icon, app icon, and standalone `.app` bundle.
+
+---
+
+## 🖼 Preview
+
+> Main window: target directory input, filename input, search button, sortable results table, action toolbar.
 
 
 ![Preview](./Preview.png)
@@ -52,74 +54,105 @@
 
 ---
 
-## 📦 下載安裝
+## 🗜️ PDF Compression
 
-### macOS 使用者
+Since **v9.0.2**, Ghostscript is bundled inside the `.app` — **no setup required**. Just download and run.
 
-1. 前往 [Releases](../../releases) 頁面下載最新版 zip。
-2. 雙擊 `.zip` 檔案解壓。
-3. 將 `SmartFinder.app` 拖曳至「應用程式」資料夾。
-4. 首次開啟若出現「無法打開，因為它來自未識別的開發者」：
-   - 前往「系統設定 → 隱私權與安全性」，點擊 **仍要打開**；或
-   - 在終端機執行：`xattr -cr /Applications/SmartFinder.app`
-5. 開始享用！
+| Quality Level | Estimated Size | Typical Use Case |
+|:---:|:---:|:---|
+| High (90-100) | ~35% of original | Archival quality |
+| Medium (40-75) | ~11-30% of original | Good balance |
+| Low (0-20) | ~4-7% of original | Email attachment |
 
----
-
-## 🚀 使用教學
-
-| 步驟 | 操作 |
-| :--: | --- |
-| 1️⃣ | 在「目標地址」輸入或選擇要搜尋的資料夾（會自動記住最近 5 個）。 |
-| 2️⃣ | 在「目標檔案名稱」輸入關鍵字（不分大小寫，模糊匹配）。 |
-| 3️⃣ | 點擊 **「確定及搜索」**，結果會顯示在下方列表。 |
-| 4️⃣ | 在列表中選擇一個或多個檔案（支援 ⌘ / ⇧ 多選）。 |
-| 5️⃣ | 使用底部按鈕進行操作：打開檔案、打開路徑、批量改名、更改存放位置。 |
-| 6️⃣ | （v8.1.0）需要切換語言時，拖曳左下角拉桿即可在 `EN ⇄ 中文` 之間即時切換。 |
+> ⚡ Real-time size estimation as you drag the slider. Press **Compress** and get instant feedback with elapsed time, GS output, and a **Cancel** button.
 
 ---
 
-## 🔧 系統需求
+## 📦 Download & Install
 
-- **作業系統**：macOS 10.13 (High Sierra) 以上
-- **芯片要求**：Apple M1
-- **Python**：3.9+（從原始碼執行時）
-- **相依套件**：PyQt5
+### macOS
+
+1. Go to the [Releases](https://github.com/XesonHKer/SmartFinder/releases/latest) page.
+2. Download the latest `SmartFinder-v9.0.2-macOS-arm64.zip`.
+3. Double-click to unzip, then drag `SmartFinder.app` to your **Applications** folder.
+4. **First launch**: if you see "cannot be opened because the developer cannot be verified":
+   - Open **System Settings → Privacy & Security**, click **Open Anyway**; or
+   - Run `xattr -dr com.apple.quarantine /Applications/SmartFinder.app`
+5. **Done!** PDF compression works immediately — no extra installs.
 
 ---
 
-## 📋 更新紀錄 (Release Notes)
+## 🚀 Usage
 
-最新版本 **v8.1.0** 重點（2026-04-29）：
-- 🌐 新增 **English / 繁體中文** 雙語介面，UI 全面國際化（按鈕、標籤、訊息框、欄位標題）
-- 🎚 主視窗左下角加入 `EN ⇄ 中文` 拉桿（QSlider），可即時切換語言，無需重啟
-- 💾 語言偏好保存於 `Smart_Finder_settings.json`，下次啟動自動沿用
-- 🇬🇧 首次啟動預設語言為 **English**
+| Step | Action |
+|:---:| --- |
+| 1️⃣ | Enter or select a **target directory** (last 5 are remembered). |
+| 2️⃣ | Type a **filename keyword** (case-insensitive fuzzy match). |
+| 3️⃣ | Click **"Confirm & Search"** — results appear in the table. |
+| 4️⃣ | Select one or more files (⌘ / ⇧ for multi-select). |
+| 5️⃣ | Use the action buttons: **Open Files**, **Open Location**, **Batch Rename**, **Change Save Location**, **Compress PDF**. |
+| 6️⃣ | (v8.1.0) Drag the **language slider** at bottom-left to switch between `EN ⇄ 中文` in real time. |
 
-**v8** 重點：
-- 全面強化錯誤處理，所有檔案操作均有 try/except 保護，避免閃退
-- 新增 Dock 圖示與視窗 App Icon，改善 macOS 原生體驗
-- 右下角 App 標籤新增小型 icon，與字體高度自動對齊
-- 對權限不足 / 已刪除檔案 / JSON 損毀等情況進行容錯處理
+---
+
+## 🔧 System Requirements
+
+- **OS**: macOS 10.13 (High Sierra) or later
+- **Chip**: Apple Silicon (M1/M2/M3/M4) or Intel
+- **Python**: 3.9+ (when running from source)
+- **Dependencies**: PyQt5
+- **PDF compression**: Built-in since v9.0.2
 
 ---
 
 ## ❓ FAQ
 
-**Q1：搜尋很慢怎麼辦？**  
-A：搜尋速度與目標目錄的檔案數量相關。建議先選擇較具體的子目錄而非整個 `/`。
+**Q1: Search is slow — what can I do?**  
+A: Search speed depends on the number of files in the target directory. Try selecting a more specific subdirectory.
 
-**Q2：打開時提示「無法驗證開發者」？**  
-A：因為本 App 未經 Apple 公證，請參考上方「[下載安裝](#-下載安裝)」中的解決方法。
+**Q2: "Can't be opened because the developer is unverified"?**  
+A: See [Download & Install](#-download--install) step 4 for the fix.
 
-**Q3：批量改名失敗？**  
-A：請檢查目標資料夾是否已存在相同檔名的檔案，本程式會在偵測到重名時中止以避免覆蓋資料。
+**Q3: Batch rename failed?**  
+A: Check for duplicate filenames in the destination folder. The tool aborts if duplicates are detected.
 
-**Q4：可以在 Windows / Linux 使用嗎？**  
-A：原始碼以 PyQt5 撰寫具跨平台潛力，但部分功能（如 `os.system('open …')`）僅針對 macOS。Windows / Linux 用戶可自行修改後執行。
+**Q4: Can I use this on Windows / Linux?**  
+A: The PyQt5 source code has cross-platform potential, but some functions (e.g., `os.system('open …')`) are macOS-specific. Modify as needed.
 
-**Q5：（v8.1.0）如何切換介面語言？**  
-A：拖曳主視窗左下角的拉桿即可在 `EN`（左）與 `中文`（右）之間即時切換，選擇會自動保存。
+**Q5: (v8.1.0) How do I switch the UI language?**  
+A: Drag the slider at the bottom-left — `EN` (left) for English, `中文` (right) for Traditional Chinese. Your choice is saved automatically.
+
+**Q6: (v9.0.0) Do I need to install anything for PDF compression?**  
+A: **Not since v9.0.2.** Ghostscript is bundled inside the `.app`. For v9.0.1 and earlier, run `brew install ghostscript`.
+
+**Q7: What if I don't need PDF compression?**  
+A: No problem — search, rename, and move features work independently.
+
+---
+
+## 📋 Release Notes
+
+> 📦 **v9.0.2** (2026-05-11) — Ghostscript bundled in-app — no more `brew install`! PDF compression works out of the box. Improved cancel UX with visual feedback. [View full diff →](https://github.com/XesonHKer/SmartFinder/releases)
+
+| Version | Date | Highlights |
+|:---|:---:|---|
+| **v9.0.2** | 2026-05-11 | 🚀 GS Bundled, cancel button, PDF compression works OOTB |
+| v9.0.1 | 2026-05-11 | 🐛 Fixed PDF UI freeze → QProcess, real-time progress |
+| v9.0.0 | 2026-04-29 | 🗜️ PDF compressor with quality slider |
+| v8.1.0 | 2026-04-29 | 🌐 Bilingual EN/中文, language slider |
+
+---
+
+## 🛠 Build from Source
+
+```bash
+cd V9.0.2
+chmod +x build_app.sh
+./build_app.sh
+# => dist/SmartFinder.app (~28 MB)
+```
+
+**Requirements**: Python 3.11, PyQt5, PyInstaller
 
 ---
 
@@ -129,9 +162,63 @@ MIT License © Xeson
 
 ---
 
-## 🙋‍♂️ 作者
+## 🙋‍♂️ Author
 
-**Xeson**  
-若有 Bug 回報、功能建議或合作邀請，歡迎透過 [Issues](../../issues) 提出。
+**Xeson** — [@XesonHKer](https://github.com/XesonHKer)
 
-> ⭐ 如果這個工具對你有幫助，請給個 Star 支持一下！
+Report bugs or suggest features via [Issues](https://github.com/XesonHKer/SmartFinder/issues).
+
+> ⭐ If Smart Finder helps you, please give it a star!
+
+---
+
+<!-- ======================================================== -->
+<!--                     中文版                                -->
+<!-- ======================================================== -->
+
+<a name="-中文版"></a>
+# Smart Finder — 繁體中文說明
+
+**一款專為 macOS 設計的智能檔案搜尋與批量管理工具**
+
+[![Platform](https://img.shields.io/badge/platform-macOS-blue.svg)](https://www.apple.com/macos/)
+[![Release](https://img.shields.io/badge/release-v9.0.2-orange.svg)](https://github.com/XesonHKer/SmartFinder/releases/latest)
+
+> [English version ↑](#-smart-finder)
+
+---
+
+## 📖 簡介
+
+**Smart Finder** 是一款基於 PyQt5 開發的 macOS 桌面應用，讓你能夠在指定資料夾中快速搜尋符合關鍵字的檔案，並提供一鍵批量打開、批量改名、批量搬移、PDF 壓縮等高效操作。
+
+## ✨ 功能特色
+
+- 🚀 **v9.0.2：Ghostscript 內建打包** — 不再需要手動安裝 Ghostscript，下載即用 PDF 壓縮！
+- 🗜️ **PDF 壓縮** — 品質拉桿即時預估大小，壓縮至原大小的 15%~70%
+- 🌐 **English / 繁體中文 雙語介面**，即時切換
+- 🔍 **智能模糊搜尋**、批量打開、批量改名、批量搬移
+
+## 🗜️ PDF 壓縮
+
+自 **v9.0.2** 起 Ghostscript 已內建於 `.app` 中，**無需額外安裝**。選擇 PDF → 拖動品質拉桿 → 按壓縮，即可完成。
+
+## 📦 下載安裝
+
+1. 前往 [Releases 頁面](https://github.com/XesonHKer/SmartFinder/releases/latest) 下載 `SmartFinder-v9.0.2-macOS-arm64.zip`
+2. 解壓後將 `SmartFinder.app` 拖入「應用程式」資料夾
+3. 若出現「無法驗證開發者」：**系統設定 → 隱私權與安全性 → 仍要打開**
+4. PDF 壓縮功能開箱即用！
+
+## 📋 更新紀錄
+
+| 版本 | 日期 | 重點 |
+|:---|:---:|---|
+| **v9.0.2** | 2026-05-11 | 🚀 GS 內建打包，取消按鈕，PDF 壓縮開箱即用 |
+| v9.0.1 | 2026-05-11 | 🐛 修復 PDF 壓縮 UI 卡死 → QProcess，即時進度 |
+| v9.0.0 | 2026-04-29 | 🗜️ PDF 壓縮功能 |
+| v8.1.0 | 2026-04-29 | 🌐 雙語介面 (English / 中文) |
+
+## 💬 作者
+
+**Xeson** — 問題回報或功能建議請至 [Issues](https://github.com/XesonHKer/SmartFinder/issues)。
