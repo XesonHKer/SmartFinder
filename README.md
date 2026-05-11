@@ -8,7 +8,7 @@
 [![Release](https://img.shields.io/badge/release-v9.0.2-orange.svg)](https://github.com/XesonHKer/SmartFinder/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](#license)
 
-[Features](#-features) • [PDF Compression](#-pdf-compression) • [Download & Install](#-download--install) • [Usage](#-usage) • [FAQ](#-faq) • [Release Notes](#-release-notes)
+[Features](#-features) • [PDF Compression](#-pdf-compression) • [Download & Install](#-download--install) • [Usage](#-usage) • [FAQ](#-faq) • [Changelog](#-changelog)
 
 > **中文版**：[繁體中文說明](#-中文版)
 
@@ -105,6 +105,36 @@ Since **v9.0.2**, Ghostscript is bundled inside the `.app` — **no setup requir
 
 ---
 
+## 🛠 Build from Source
+
+```bash
+cd src/V9.0.2
+chmod +x build_app.sh
+./build_app.sh
+# => dist/SmartFinder.app (~28 MB)
+```
+
+**Requirements**: Python 3.11, PyQt5 (`pip install pyqt5`), PyInstaller (`pip install pyinstaller`)
+
+### Project Structure
+
+```
+SmartFinder/
+├── src/V9.0.2/          # Latest source code
+│   ├── SmartFinder_v9_0_2.py   # Main application
+│   ├── pdf_compressor.py       # PDF compression module
+│   ├── gs_bundle/              # Bundled Ghostscript
+│   ├── Icon/                   # App icons
+│   ├── SmartFinder.spec        # PyInstaller config
+│   └── build_app.sh            # Build script
+├── CHANGELOG.md        # Version history
+├── README.md           # This file
+├── Preview.png         # Screenshot
+└── .gitignore
+```
+
+---
+
 ## ❓ FAQ
 
 **Q1: Search is slow — what can I do?**  
@@ -130,29 +160,17 @@ A: No problem — search, rename, and move features work independently.
 
 ---
 
-## 📋 Release Notes
+## 📋 Changelog
 
-> 📦 **v9.0.2** (2026-05-11) — Ghostscript bundled in-app — no more `brew install`! PDF compression works out of the box. Improved cancel UX with visual feedback. [View full diff →](https://github.com/XesonHKer/SmartFinder/releases)
+> See [CHANGELOG.md](CHANGELOG.md) for full version history.
 
 | Version | Date | Highlights |
 |:---|:---:|---|
-| **v9.0.2** | 2026-05-11 | 🚀 GS Bundled, cancel button, PDF compression works OOTB |
+| **v9.0.2** | 2026-05-11 | 🚀 GS Bundled in-app, PDF compression OOTB, cancel button |
 | v9.0.1 | 2026-05-11 | 🐛 Fixed PDF UI freeze → QProcess, real-time progress |
 | v9.0.0 | 2026-04-29 | 🗜️ PDF compressor with quality slider |
 | v8.1.0 | 2026-04-29 | 🌐 Bilingual EN/中文, language slider |
-
----
-
-## 🛠 Build from Source
-
-```bash
-cd V9.0.2
-chmod +x build_app.sh
-./build_app.sh
-# => dist/SmartFinder.app (~28 MB)
-```
-
-**Requirements**: Python 3.11, PyQt5, PyInstaller
+| v8.0.0 | — | Initial release: file search, batch rename/move |
 
 ---
 
